@@ -10,9 +10,9 @@ The issue with their NPZ format is that it does not include a possibility to cal
 
 - First, go to the directory where your python files are installed by default, then go to `tensorlayer/files/utils.py`
   > _For `Conda` users, python pachages are installed in `/home/user/anaconda3/envs/Environment/lib/python3.7/site-packages/..`_
-- Go to `line 1960` and change ***load_npz*** to:
+- Go to `line 1960` and replace the existing ***load_npz*** function with:
 
-```bash
+```python
 def load_npz(path='', name='model.npz'):
     """Load the parameters of a Model saved by tl.files.save_npz().
 
@@ -74,6 +74,17 @@ def assign_weights(d, network):
         print(str(i) + ' for Debuggging by Elio')
         ops.append(network.all_weights[i].assign(d[network.all_weights[i].name]))
     return ops
+```
+
+>**That's all you need to change for now!**
+
+## Conversion to PB
+- In order to convert to PB format, we will use `export_pb.py` found in the hyperpose rpository.
+- we then run the following terminal command:
+- 
+```bash
+# From the hyperpose directory:
+python3 export_pb.py --model_name=${Your_Model} --model_type=LightweightOpenpose --model_backbone=Vggtiny
 ```
 
 
