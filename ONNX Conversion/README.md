@@ -33,7 +33,6 @@ def assign_weights(d, network):
     """
     ops = []
     for i,j in enumerate(network.all_weights):
-        print(str(i) + ' for Debuggging by Elio')
         ops.append(network.all_weights[i].assign(d[network.all_weights[i].name]))
     return ops
 ```
@@ -43,11 +42,27 @@ def assign_weights(d, network):
 ### Conversion to PB
 - In order to convert to PB format, we will use `export_pb.py` found in the hyperpose rpository.
 - we then run the following terminal command:
-- 
+
 ```bash
 # From the hyperpose directory:
 python3 export_pb.py --model_name=${Your_Model} --model_type=LightweightOpenpose --model_backbone=Vggtiny
 ```
+> **Here you go, we're already half way through the process**
 
+## PB to ONNX
+
+After the Conversion to PB, the terminal output should look similar to the following
+```bash
+Skipping registering GPU devices...
+2022-06-24 16:53:42.238658: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-06-24 16:53:42.238663: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0 
+2022-06-24 16:53:42.238667: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N 
+2022-06-24 16:53:42.269458: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:816] Optimization results for grappler item: graph_to_optimize
+2022-06-24 16:53:42.269470: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:818]   function_optimizer: Graph size after: 1168 nodes (996), 1220 edges (1047), time = 13.189ms.
+2022-06-24 16:53:42.269475: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:818]   function_optimizer: function_optimizer did nothing. time = 0.654ms.
+Exporting pb file finished! output file: save_dir/Test/frozen_Test.pb
+Exported graph INPUT nodes: ['x']
+Exported graph OUTPUT nodes: ['Identity_1', 'Identity']
+```
 
 
