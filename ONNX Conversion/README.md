@@ -63,8 +63,10 @@ Skipping registering GPU devices...
 Exporting pb file finished! output file: save_dir/Test/frozen_Test.pb
 Exported graph INPUT nodes: ['x']
 Exported graph OUTPUT nodes: ['Identity_1', 'Identity']
+
 ```
-- `In order to convert to ONNX, use the sollowing terminal commandS: `
+> **In order to convert to ONNX, use the following terminal commands: **
+
 ```bash
 # Installing tf2onnx package
 pip install tf2onnx
