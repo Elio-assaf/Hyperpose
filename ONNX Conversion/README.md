@@ -64,5 +64,9 @@ Exporting pb file finished! output file: save_dir/Test/frozen_Test.pb
 Exported graph INPUT nodes: ['x']
 Exported graph OUTPUT nodes: ['Identity_1', 'Identity']
 ```
-
+- `In order to convert to ONNX, here is an exemplary terminal command: `
+- ```bash
+- xx
+- xx
+- ```
 
