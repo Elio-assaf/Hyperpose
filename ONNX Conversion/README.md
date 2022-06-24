@@ -81,6 +81,6 @@ export OUTPUT_ONNX_MODEL=my_output_model.onnx
 python3 -m tf2onnx.convert --graphdef frozen_${MODEL_NAME}.pb --output ${OUTPUT_ONNX_MODEL} --inputs ${INPUT_NODE_NAME}:0 --outputs ${INPUT_NODE_NAME0}:0,${INPUT_NODE_NAME1}:0
 
 ```
-## > `**Great Work!, now you can use your ONNX model for deployment** `
+> `**Great Work!, now you can use your ONNX model for deployment** `
 
 
