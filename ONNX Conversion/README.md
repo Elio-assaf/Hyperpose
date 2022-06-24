@@ -10,7 +10,7 @@ The issue with their NPZ format is that it does not include a possibility to cal
 
 - First, go to the directory where your python files are installed by default, then go to `tensorlayer/files/utils.py`
   > _For `Conda` users, python pachages are installed in `/home/user/anaconda3/envs/Environment/lib/python3.7/site-packages/..`_
-- Go to `line 1960` and change `***load_npz***` to:
+- Go to `line 1960` and change ***load_npz*** to:
 
 ```bash
 def load_npz(path='', name='model.npz'):
@@ -41,6 +41,40 @@ def load_npz(path='', name='model.npz'):
     return d#['params']
 ```
 
-- Now go `line 2022` and change ***
+- Now go ***line 1991*** and replace the existing ***assign_weights*** function with:
+
+```python
+def assign_weights(d, network):
+    """Assign the given parameters to the TensorLayer network.
+
+    Parameters
+    ----------
+    weights : list of array
+        A list of model weights (array) in order.
+    network : :class:`Layer`
+        The network to be assigned.
+
+    Returns
+    --------
+    1) list of operations if in graph mode
+            A list of tf ops in order that assign weights. Support sess.run(ops) manually.
+    2) list of tf variables if in eager mode
+            A list of tf variables (assigned weights) in order.
+
+    Examples
+    --------
+
+    References
+    ----------
+    - `Assign value to a TensorFlow variable <http://stackoverflow.com/questions/34220532/how-to-assign-value-to-a-tensorflow-variable>`__
+
+    """
+    ops = []
+    for i,j in enumerate(network.all_weights):
+        print(str(i) + ' for Debuggging by Elio')
+        ops.append(network.all_weights[i].assign(d[network.all_weights[i].name]))
+    return ops
+```
+
 
 
