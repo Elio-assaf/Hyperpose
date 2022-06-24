@@ -48,7 +48,7 @@ def assign_weights(d, network):
 python3 export_pb.py --model_name=${Your_Model} --model_type=LightweightOpenpose --model_backbone=Vggtiny
 ```
 > **Here you go, we're already half way through the process**
-
+For the Hyperpose version of this convertion, check: 
 ## PB to ONNX
 
 After the Conversion to PB, the terminal output should look similar to the following
@@ -64,9 +64,20 @@ Exporting pb file finished! output file: save_dir/Test/frozen_Test.pb
 Exported graph INPUT nodes: ['x']
 Exported graph OUTPUT nodes: ['Identity_1', 'Identity']
 ```
-- `In order to convert to ONNX, here is an exemplary terminal command: `
-- ```bash
-- xx
-- xx
-- ```
+- `In order to convert to ONNX, use the sollowing terminal commandS: `
+```bash
+pip install tf2onnx
+python3 -m tf2onnx.convert --graphdef frozen_MyProtobufFile.pb --output Testing_the_ONNX_convertion.onnx --inputs x:0 --outputs Identity_1:0,Identity:0
+
+# You can also do it by first exporting the variables one by one and doing the following:
+
+export INPUT_NODE_NAME=x
+export INPUT_NODE_NAME0=Identity
+export INPUT_NODE_NAME1=Identity_1
+export OUTPUT_ONNX_MODEL=my_output_model.onnx
+
+python3 -m tf2onnx.convert --graphdef frozen_${MODEL_NAME}.pb --output ${OUTPUT_ONNX_MODEL} --inputs ${INPUT_NODE_NAME}:0 --outputs ${INPUT_NODE_NAME0}:0,${INPUT_NODE_NAME1}:0
+
+
+
 
