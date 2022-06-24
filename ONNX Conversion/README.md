@@ -9,5 +9,5 @@ In order to convert successfully to protobuf, we need to make some modifications
 The issue with their NPZ format is that it does not include a possibility to call `['params']` and get all the parameters of the model.
 
 - First, go to the directory where your python files are installed by default, then go to `tensorlayer/files/utils.py`
-- For `Conda` users, it is in /home/user/anaconda3/envs/Your_Environment_Name/lib/python3.7/site-packages/tensorlayer/files/utils.py
+-- For `Conda` users, python pachages are installed in `/home/user/anaconda3/envs/Your_Environment_Name/lib/python3.7/site-packages/..`
 
