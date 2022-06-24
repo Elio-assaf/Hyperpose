@@ -1,2 +1,2 @@
 # Installation Instructions
-RTo be written here
+To be written here
