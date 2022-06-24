@@ -10,7 +10,7 @@ The issue with their NPZ format is that it does not include a possibility to cal
 
 - First, go to the directory where your python files are installed by default, then go to `tensorlayer/files/utils.py`
   > _For `Conda` users, python pachages are installed in `/home/user/anaconda3/envs/Environment/lib/python3.7/site-packages/..`_
-- go to line 1960 and change load_npz to:
+- Go to `line 1960` and change `_*load_npz*_ to:
 
 ```bash
 def load_npz(path='', name='model.npz'):
@@ -40,5 +40,7 @@ def load_npz(path='', name='model.npz'):
     d = np.load(os.path.join(path, name), allow_pickle=True)
     return d#['params']
 ```
+
+- Now go `line 2022' and change 
 
 
