@@ -65,7 +65,7 @@ Exported graph INPUT nodes: ['x']
 Exported graph OUTPUT nodes: ['Identity_1', 'Identity']
 
 ```
-> **In order to convert to ONNX, use the following terminal commands: **
+> **In order to convert to ONNX, use the following terminal commands:**
 
 ```bash
 # Installing tf2onnx package
