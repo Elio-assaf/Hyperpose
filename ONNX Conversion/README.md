@@ -10,4 +10,34 @@ The issue with their NPZ format is that it does not include a possibility to cal
 
 - First, go to the directory where your python files are installed by default, then go to `tensorlayer/files/utils.py`
   - _For `Conda` users, python pachages are installed in `/home/user/anaconda3/envs/Environment/lib/python3.7/site-packages/..`_
+- go to line 1960 and change load_npz to:
+```bash
+def load_npz(path='', name='model.npz'):
+    """Load the parameters of a Model saved by tl.files.save_npz().
+
+    Parameters
+    ----------
+    path : str
+        Folder path to `.npz` file.
+    name : str
+        The name of the `.npz` file.
+
+    Returns
+    --------
+    list of array
+        A list of parameters in order.
+
+    Examples
+    --------
+    - See ``tl.files.save_npz``
+
+    References
+    ----------
+    - `Saving dictionary using numpy <http://stackoverflow.com/questions/22315595/saving-dictionary-of-header-information-using-numpy-savez>`__
+
+    """
+    d = np.load(os.path.join(path, name), allow_pickle=True)
+    return d#['params']
+```
+
 
