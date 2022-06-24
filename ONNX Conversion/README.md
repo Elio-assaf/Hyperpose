@@ -66,7 +66,9 @@ Exported graph OUTPUT nodes: ['Identity_1', 'Identity']
 ```
 - `In order to convert to ONNX, use the sollowing terminal commandS: `
 ```bash
+# Installing tf2onnx package
 pip install tf2onnx
+# Converting our .pb file with it:
 python3 -m tf2onnx.convert --graphdef frozen_MyProtobufFile.pb --output Testing_the_ONNX_convertion.onnx --inputs x:0 --outputs Identity_1:0,Identity:0
 
 # You can also do it by first exporting the variables one by one and doing the following:
