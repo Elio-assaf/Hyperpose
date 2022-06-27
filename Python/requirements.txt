@@ -1,0 +1,10 @@
+cython>=0.29
+numpy==1.19.4
+easydict>=1.9,<=1.10
+opencv-python>=3.4,<3.5
+tensorflow==2.5.0
+tensorlayer==2.2.3
+pycocotools==2.0.0  # must be installed after cython and numpy are installed
+
+# matplotlib==3.5.2
+# pip install tqdm
