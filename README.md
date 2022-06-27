@@ -1,4 +1,4 @@
-# Hyperpose
+# Hyperpose CUDA11
 > Hyperpose built with CUDA11.3.1 and CuDNN8.
  
 > compatible with the Amper Architecture: RTX 3090 / Jetson AGX ORIN.
