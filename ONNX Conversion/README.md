@@ -8,7 +8,7 @@ To know more about this format, check: https://onnx.ai/
 In the Hyperpose docs, it is explained that in order to convert to ONNX, we should first convert to protobuf
 > The current convertion only works with the initial hyperpose build: ```Tensorflow == 2.3.1 ```, and some modifications to ```Tensorlayer```
 
-We first create a new virtual environment for the convertion to PB:
+We first create a convertion virtual environment with the old requirements:
 ```bash
 # from inside the VE, install cudatoolkit and cudnn library using conda
 conda install cudatoolkit=10.0.130
