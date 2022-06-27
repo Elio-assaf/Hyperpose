@@ -16,10 +16,10 @@ It is relatively easy to use and well documented here:  https://hyperpose.readth
 $ docker pull elio99/hyperpose:cuda11.3
 ```
 
-# Compatible Python Installation
+# Python Installation & Model Training
 
-> Check the README.md in the Python folder.
+> To train a model with the newer Amper Architecture GPUs, check the README.md in the Python folder.
 
-# Python Training File Convertion
+# Format Convertion to ONNX for Deployment
 
 > Check the README.md in the ONNX Convertion folder.
