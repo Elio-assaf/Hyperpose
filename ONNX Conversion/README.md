@@ -1,5 +1,5 @@
 # Convertion Instructions
-***
+
 ## ONNX Format
 ONNX is our desired ML model format for easier transferrability to other platforms and easier deployment with NVIDIA TensorRT.
 To know more about this format, check: https://onnx.ai/ 
